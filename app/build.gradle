@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String","API_KEY", "\"CHANGE\"")
     }
     buildTypes {
         release {
@@ -26,4 +27,11 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
+
+compile 'com.facebook.fresco:fresco:1.0.0'
+compile 'com.android.support:appcompat-v7:25.0.1'
+compile 'com.android.support:design:25.0.1'
+
+compile 'com.squareup.retrofit2:retrofit:2.1.0'
+compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 }
