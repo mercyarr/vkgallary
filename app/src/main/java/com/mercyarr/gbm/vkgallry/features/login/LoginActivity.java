@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     private String AUTHORIZATION_URL = "";
     private int client_id = 11122843;
 
+
     public static String VK_FILED_ACCESS_TOKEN = "access_token";
     public static String VK_FILED_USER_ID = "user_id";
 
