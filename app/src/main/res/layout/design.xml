@@ -5,13 +5,13 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/colToolbar"
+            android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:contentScrim="@android:color/transparent"
@@ -22,7 +22,6 @@
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:background="@android:color/white"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.Toolbar
@@ -56,30 +55,30 @@
                             android:layout_toRightOf="@+id/sdvAvatar"
                             android:orientation="horizontal">
 
-                            <com.mercyarr.gbm.vkgallry.features.profile.views.CounterTV
-                                android:id="@+id/ctvPhoto"
+                            <com.stfalcon.vkphotogallery.features.profile.counters.CounterView
+                                android:id="@+id/photosCounter"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"/>
 
-                            <com.mercyarr.gbm.vkgallry.features.profile.views.CounterTV
-                                android:id="@+id/ctvFriends"
+                            <com.stfalcon.vkphotogallery.features.profile.counters.CounterView
+                                android:id="@+id/friendsCounter"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"/>
 
-                            <com.mercyarr.gbm.vkgallry.features.profile.views.CounterTV
-                                android:id="@+id/ctvFollowing"
+                            <com.stfalcon.vkphotogallery.features.profile.counters.CounterView
+                                android:id="@+id/followersCounter"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"/>
 
                         </LinearLayout>
 
                     </RelativeLayout>
 
                     <TextView
-                        android:id="@+id/tvBirthday"
+                        android:id="@+id/tvFullName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -102,7 +101,7 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tlAlbumsTabs"
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
@@ -111,7 +110,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/vPager"
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>

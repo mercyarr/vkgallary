@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">vkgallry</string>
+    <string name="app_name">VkGallry</string>
+    <string name="profile_field_photo">photos</string>
+    <string name="profile_field_friends">friends</string>
+    <string name="profile_field_followers">followers</string>
+    <string name="profile_field_birthday">birthday:</string>
+    <string name="profile_field_status">status:</string>
+    <string name="profile_field_tab_all">all photos</string>
+    <string name="profile_field_tab_albums">albums</string>
+    <string name="photo_field_likes">likes</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

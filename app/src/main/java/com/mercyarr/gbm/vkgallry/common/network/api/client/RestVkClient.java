@@ -1,4 +1,7 @@
 package com.mercyarr.gbm.vkgallry.common.network.api.client;
+
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -12,18 +15,22 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class VkClient implements Interceptor {
+public class RestVkClient implements Interceptor
 
-    private Retrofit retrofit;
-    private Object service;
+    {
 
-    public static VkClient instanse = new VkClient();
+        private Retrofit retrofit;
+        private Object service;
 
-    public static VkClient getInstanse() {
+        private static String TAG = "Retrofit2";
+
+        public static RestVkClient instanse = new RestVkClient();
+
+    public static RestVkClient getInstanse() {
         return instanse;
     }
 
-    private VkClient() {
+    private RestVkClient() {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -40,7 +47,7 @@ public class VkClient implements Interceptor {
     }
 
     @Override
-    public Response intercept(Chain chain) throws IOException {
+    public Response intercept(Interceptor.Chain chain) throws IOException {
         Request original = chain.request();
         HttpUrl originalUrl = original.url();
 
@@ -52,12 +59,13 @@ public class VkClient implements Interceptor {
 
         Request request = requestBuilder.build();
 
+        Log.d(TAG, "url: "+request);
+
         return chain.proceed(request);
     }
 
-    @SuppressWarnings("unchecked")
     public static <T> T makeService(Class<T> serviceClass) {
-        VkClient client = getInstanse();
+        RestVkClient client = getInstanse();
         if (client.service == null || !serviceClass.isInstance(client.service)) {
             client.service = client.retrofit.create(serviceClass);
         }

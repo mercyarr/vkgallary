@@ -14,8 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     private WebView wvBrowser;
 
     private String AUTHORIZATION_URL = "";
-    private int client_id = 11122843;
-
+    private final static int client_id = 5754816;
 
     public static String VK_FILED_ACCESS_TOKEN = "access_token";
     public static String VK_FILED_USER_ID = "user_id";
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         AUTHORIZATION_URL = "https://oauth.vk.com/authorize?client_id="+client_id
                 +"&display=page&redirect_uri=https://oauth.vk.com/blank.html"
                 +"&scope="+"friends,photos,audio,video,pages,status,notes,messages,wall,groups,notifications"
-                +"&response_type=token&v=5.60&state=123456";
+                +"&response_type=token&v=5.60";
     }
 
     private void initView(){
